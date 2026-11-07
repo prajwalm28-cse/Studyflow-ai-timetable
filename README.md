@@ -1,20 +1,23 @@
-node_modules/
-dist/
-build/
+# StudyFlow AI – Smart Study Timetable Generator
 
-# Environment variables
-.env
-.env.local
-.env.*.local
+An AI-powered smart study timetable generator designed to help students manage their study schedules efficiently.
 
-# Logs
-*.log
-npm-debug.log*
+## Features
+- Smart Study Timetable Generation
+- Task Management
+- Smart Rescheduling
+- Weekly Progress Analytics
+- AI Study Recommendations
+- Pomodoro Timer
+- Study Streak Tracking
 
-# Editor files
-.vscode/
-.idea/
+## Technology Stack
+- React.js
+- Vite
+- CSS
+- JavaScript
 
-# OS files
-.DS_Store
-Thumbs.db
+## Installation
+
+npm install
+npm run dev
