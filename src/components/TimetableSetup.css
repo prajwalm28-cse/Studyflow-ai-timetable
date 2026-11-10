@@ -1,0 +1,176 @@
+
+.timetable-setup {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.setup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.setup-card {
+  padding: 26px;
+}
+
+.setup-card h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.setup-modes,
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mode-card,
+.template-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  text-align: left;
+  border: 1px solid #302b40;
+  border-radius: 13px;
+  background: #191724;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mode-card > span {
+  font-size: 25px;
+  color: #b18aff;
+}
+
+.mode-card small,
+.template-card small {
+  color: #aaa4bd;
+  line-height: 1.5;
+}
+
+.mode-card.selected,
+.template-card.selected {
+  border-color: #9860ff;
+  background: #251c39;
+}
+
+.block-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.block-form label,
+.setup-card > label {
+  color: #d9d2e9;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.block-form input,
+.block-form select,
+.setup-card > select,
+.time-fields input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #393248;
+  border-radius: 9px;
+  background: #100f18;
+  color: #fff;
+}
+
+.time-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.time-fields > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.day-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.day {
+  padding: 10px 14px;
+  border: 1px solid #393248;
+  border-radius: 9px;
+  background: #191724;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.day.selected {
+  border-color: #9860ff;
+  background: #382754;
+  color: white;
+}
+
+.saved-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.saved-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 14px;
+  border: 1px solid #302b40;
+  border-radius: 10px;
+  background: #191724;
+}
+
+.saved-block > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.saved-block small {
+  color: #aaa4bd;
+}
+
+.saved-block button {
+  padding: 8px 12px;
+  border: 1px solid #49334f;
+  border-radius: 8px;
+  background: #2b2035;
+  color: #e0b4ff;
+  cursor: pointer;
+}
+
+.save-schedule {
+  align-self: flex-start;
+  padding: 14px 24px;
+}
+
+@media (max-width: 700px) {
+  .setup-modes,
+  .template-grid,
+  .time-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .setup-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

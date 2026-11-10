@@ -1,0 +1,116 @@
+
+.weekly-timetable {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.weekly-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.weekly-card {
+  padding: 22px;
+}
+
+.week-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.week-navigation h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.week-navigation button,
+.today-button {
+  padding: 10px 16px;
+  border: 1px solid #393248;
+  border-radius: 9px;
+  background: #191724;
+  color: white;
+  cursor: pointer;
+}
+
+.today-button {
+  margin-top: 16px;
+  background: #382754;
+  border-color: #9860ff;
+}
+
+.weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.week-day {
+  padding: 20px;
+  min-height: 150px;
+}
+
+.week-day-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #302b40;
+}
+
+.week-day-heading span {
+  color: #aaa4bd;
+  font-size: 13px;
+}
+
+.empty-day {
+  color: #8d879d;
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+.week-event {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 13px;
+  padding: 12px;
+  border-left: 4px solid #9860ff;
+  border-radius: 8px;
+  background: #191724;
+}
+
+.week-event span {
+  color: #c5bdd7;
+  font-size: 13px;
+}
+
+.week-event small {
+  color: #928aa5;
+  text-transform: capitalize;
+}
+
+@media (max-width: 700px) {
+  .weekly-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .weekly-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .week-navigation {
+    flex-wrap: wrap;
+  }
+
+  .week-navigation h2 {
+    font-size: 16px;
+  }
+}

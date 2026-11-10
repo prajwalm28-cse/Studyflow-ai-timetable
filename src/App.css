@@ -251,10 +251,10 @@ header h1 {
 }
 
 .progress-bar div {
-  width: 72%;
   height: 100%;
   background: linear-gradient(90deg, #8b5cf6, #c084fc);
   border-radius: 20px;
+  transition: width 0.4s ease;
 }
 
 hr {
@@ -327,4 +327,220 @@ hr {
   .session .tag {
     display: none;
   }
+}
+
+/* ===== ADD TASK MODAL ===== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.task-modal {
+  width: 100%;
+  max-width: 460px;
+  background: #171622;
+  border: 1px solid #302b42;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  animation: modalAppear 0.2s ease-out;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.modal-icon {
+  display: inline-flex;
+  color: #b18aff;
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.modal-header h2 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 23px;
+}
+
+.modal-header p {
+  margin: 0;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: white;
+}
+
+.task-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-modal form label {
+  color: #d5d0e5;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.task-modal form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  border-radius: 10px;
+  border: 1px solid #373248;
+  background: #100f18;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.task-modal form input:focus {
+  border-color: #9860ff;
+  box-shadow: 0 0 0 3px rgba(152, 96, 255, 0.13);
+}
+
+.task-modal input[type="time"] {
+  color-scheme: dark;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.modal-actions button {
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancel-button {
+  background: #242131;
+  color: #d0cadd;
+  border: 1px solid #393348;
+}
+
+.cancel-button:hover {
+  background: #302b42;
+}
+
+.save-button {
+  border: none;
+}
+
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 500px) {
+  .task-modal {
+    padding: 22px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+}
+
+/* Study task form improvements */
+
+.task-modal form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  border-radius: 10px;
+  border: 1px solid #373248;
+  background: #100f18;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.task-modal form select:focus {
+  border-color: #9860ff;
+  box-shadow: 0 0 0 3px rgba(152, 96, 255, 0.13);
+}
+
+.task-modal input[type="date"] {
+  color-scheme: dark;
+}
+
+.task-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.task-completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.session button {
+  cursor: pointer;
+}
+
+.session button:hover {
+  transform: scale(1.08);
+}
+/* Compact task action buttons */
+.session > button {
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  padding: 0;
+  margin-left: 6px;
+  border: 1px solid #393248;
+  border-radius: 9px;
+  background: #211d30;
+  color: #c5a5ff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.session > button:hover {
+  background: #382754;
+  border-color: #9860ff;
+  transform: translateY(-2px);
 }
