@@ -1,8 +1,8 @@
-
 import { useState, useEffect } from 'react'
 import TimetableSetup from './components/TimetableSetup'
 import WeeklyTimetable from './components/WeeklyTimetable'
 import WeeklyAnalytics from './components/WeeklyAnalytics'
+import AIRecommendations from './components/AIRecommendations'
 import { supabase } from './lib/supabase'
 import { generateStudyPlan } from './utils/studyPlanner'
 import './App.css'
@@ -403,10 +403,21 @@ function App() {
       />
     )
   }
+
   if (currentPage === 'analytics') {
+    return (
+      <WeeklyAnalytics
+        onBack={() => setCurrentPage('dashboard')}
+      />
+    )
+  }
+
+  // AI study recommendations page
+  if (currentPage === 'recommendations') {
   return (
-    <WeeklyAnalytics
+    <AIRecommendations
       onBack={() => setCurrentPage('dashboard')}
+      onNavigate={(page) => setCurrentPage(page)}
     />
   )
 }
@@ -446,19 +457,25 @@ function App() {
 
           <a>✓ My Tasks</a>
           <a
-  className={currentPage === 'analytics' ? 'active' : ''}
-  onClick={() => setCurrentPage('analytics')}
-  style={{ cursor: 'pointer' }}
->
-  ◉ Analytics
-</a>
+            className={currentPage === 'analytics' ? 'active' : ''}
+            onClick={() => setCurrentPage('analytics')}
+            style={{ cursor: 'pointer' }}
+          >
+            ◉ Analytics
+          </a>
         </nav>
 
         <p className="menu-title">TOOLS</p>
 
         <nav>
           <a>◴ Pomodoro Timer</a>
-          <a>✧ AI Recommendations</a>
+          <a
+            className={currentPage === 'recommendations' ? 'active' : ''}
+            onClick={() => setCurrentPage('recommendations')}
+            style={{ cursor: 'pointer' }}
+          >
+            ✧ AI Recommendations
+          </a>
           <a>⚙ Settings</a>
         </nav>
 
